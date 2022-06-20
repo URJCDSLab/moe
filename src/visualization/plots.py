@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 from itertools import cycle, islice
 import itertools
 from mlxtend.plotting import plot_decision_regions
@@ -116,3 +117,45 @@ def custom_decision_region_plot_v2(X, y, clf_learner, title='', zoom=1):
     plt.ylim([int(X[:, 1].min() - 2) , int(X[:, 1].max() + 2)])
     plt.title(title)
     plt.show()
+    
+def WinTieLoss(wtl_df, leyend=True,saving_path=None):
+    
+    sns.set_theme(style="whitegrid")
+
+    sns.color_palette("coolwarm", as_cmap=True)
+
+    # Initialize the matplotlib figure
+    f, ax = plt.subplots(figsize=(15, 6))
+
+    # Plot Losses
+    sns.barplot(x="Losses", y=wtl_df.index, data=wtl_df,
+                label="Losses", color="indianred")
+
+    # Plot Ties
+    sns.barplot(x="Ties", y=wtl_df.index, data=wtl_df,
+                label="Ties", color="gold")
+
+
+    # Plot Wins
+    sns.barplot(x="Wins", y=wtl_df.index, data=wtl_df,
+                label="Wins", color="seagreen")
+
+    # Critical value 90%
+    n_df = wtl_df.max().max()
+    nc = int(n_df/2 + 1.645*(np.sqrt(n_df)/2))
+    plt.axvline(nc, color='black', linewidth=2.5, linestyle='dashdot', label='alpha 0.10')
+
+    # Critical value 95%
+    n_df = wtl_df.max().max()
+    nc = int(n_df/2 + 1.96*(np.sqrt(n_df)/2))
+    plt.axvline(nc, color='midnightblue', linewidth=2.5, linestyle='dashdot', label='alpha 0.05')
+
+    if leyend==True:
+        # Add a legend and informative axis label
+        ax.legend(ncol=6, loc="center", frameon=False,  bbox_to_anchor=(.5, 1.05))
+    ax.set(xlim=(0, n_df), ylabel="",
+        xlabel="Number of Datasets")
+    sns.despine(left=True, bottom=True)
+    
+    if saving_path is not None:
+        plt.savefig(f'{saving_path}.png')

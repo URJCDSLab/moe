@@ -4,11 +4,23 @@ from joblib import Parallel, delayed
 from tqdm import tqdm 
 import contextlib
 import joblib
+import json
 
 from sklearn.model_selection import ParameterGrid
 from sklearn.utils.fixes import _joblib_parallel_args
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import matthews_corrcoef
+
+class NpEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        else:
+            return super(NpEncoder, self).default(obj)
 
 
 @contextlib.contextmanager

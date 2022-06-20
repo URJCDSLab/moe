@@ -1,13 +1,9 @@
-from collections import Counter
-import random
 from joblib import Parallel, delayed
 import logging
 
 import statistics
-import pandas as pd
 import numpy as np
 
-from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.svm import SVC
 from sklearn.utils.validation import check_random_state
@@ -15,7 +11,7 @@ from sklearn.model_selection import ParameterGrid
 from sklearn.utils.fixes import _joblib_parallel_args
 
 
-class moe():
+class MOE():
     def __init__(self, 
                  method=SVC, 
                  params={'C': [1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1, 1, 10]}, 
@@ -124,7 +120,6 @@ class moe():
         best_learner = None
         best_score = float("inf")
         best_learner_train_error = None
-        best_learner_test_error = None
         
         best_oob_error = None
         
