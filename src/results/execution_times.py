@@ -1,7 +1,6 @@
 from sklearnex import patch_sklearn
 patch_sklearn()
 
-import pickle
 import json
 import pandas as pd
 from src.results.summary import best_params
