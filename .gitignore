@@ -75,8 +75,8 @@ target/
 # Jupyter NB Checkpoints
 .ipynb_checkpoints/
 
-# exclude data from source control by default
-/data/
+# exclude serialized trained models from source control by default
+/results/
 
 # Mac OS-specific storage files
 .DS_Store

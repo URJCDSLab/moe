@@ -1,0 +1,1927 @@
+{
+   "appendicitis": {
+      "MoeSvm": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 1,
+            "n_learners": 10,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 10,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 100,
+            "gamma": 0.001,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 7
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 5,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.2,
+            "max_depth": 3,
+            "max_features": null,
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 500,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "australian": {
+      "MoeSvm": {
+         "params": {
+            "lam": 5,
+            "n_learners": 20,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 5,
+            "n_learners": 20,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 5,
+            "n_learners": 10,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 500,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 1,
+            "gamma": 0.001,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 11
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.2,
+            "eval_metric": "logloss",
+            "max_depth": 7,
+            "n_estimators": 300,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.3,
+            "max_depth": 7,
+            "max_features": null,
+            "n_estimators": 500,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "backache": {
+      "MoeSvm": {
+         "params": {
+            "lam": 1,
+            "n_learners": 10,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 5,
+            "n_learners": 20,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 30,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 1000,
+            "gamma": 0.001,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 3
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 7,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.2,
+            "max_depth": 3,
+            "max_features": "log2",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 500,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "banknote": {
+      "MoeSvm": {
+         "params": {
+            "lam": 1,
+            "n_learners": 10,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 1,
+            "n_learners": 10,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 30,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 1,
+            "gamma": 10,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 7
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.2,
+            "eval_metric": "logloss",
+            "max_depth": 3,
+            "n_estimators": 300,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.3,
+            "max_depth": 5,
+            "max_features": "sqrt",
+            "n_estimators": 500,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "breastcancer": {
+      "MoeSvm": {
+         "params": {
+            "lam": 3,
+            "n_learners": 10,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 100,
+            "gamma": 0.001,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 11
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 3,
+            "n_estimators": 300,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.2,
+            "max_depth": 5,
+            "max_features": "log2",
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 500,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "bupa": {
+      "MoeSvm": {
+         "params": {
+            "lam": 3,
+            "n_learners": 20,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 3,
+            "n_learners": 10,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 3,
+            "n_learners": 20,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 1000,
+            "gamma": 0.0001,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 11
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 3,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "max_features": null,
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 500,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "cleve": {
+      "MoeSvm": {
+         "params": {
+            "lam": 1,
+            "n_learners": 20,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 3,
+            "n_learners": 30,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 1,
+            "gamma": 0.01,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 3
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 5,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.2,
+            "max_depth": 5,
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "colon-cancer": {
+      "MoeSvm": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 30,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 10,
+            "gamma": 0.0001,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 9
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.3,
+            "eval_metric": "logloss",
+            "max_depth": 3,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "max_features": "log2",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "diabetes": {
+      "MoeSvm": {
+         "params": {
+            "lam": 1,
+            "n_learners": 20,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "log2",
+            "n_estimators": 500,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 1,
+            "gamma": 0.01,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 11
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 3,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.2,
+            "max_depth": 5,
+            "max_features": null,
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "flare": {
+      "MoeSvm": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 5,
+            "n_learners": 20,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 5,
+            "n_learners": 20,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 100,
+            "gamma": 0.1,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 5
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 5,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.2,
+            "max_depth": 3,
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "fourclass": {
+      "MoeSvm": {
+         "params": {
+            "lam": 1,
+            "n_learners": 10,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 1,
+            "n_learners": 10,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 20,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 1,
+            "gamma": 10,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 3
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.2,
+            "eval_metric": "logloss",
+            "max_depth": 3,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.2,
+            "max_depth": 7,
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "german_numer": {
+      "MoeSvm": {
+         "params": {
+            "lam": 5,
+            "n_learners": 20,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 20,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 500,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 10,
+            "gamma": 0.01,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 9
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 3,
+            "n_estimators": 300,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.2,
+            "max_depth": 5,
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 500,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "haberman": {
+      "MoeSvm": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 5,
+            "n_learners": 20,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 5,
+            "n_learners": 20,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 500,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 100,
+            "gamma": 0.1,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 11
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 3,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "heart": {
+      "MoeSvm": {
+         "params": {
+            "lam": 3,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 1,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 3,
+            "n_learners": 30,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 100,
+            "gamma": 0.0001,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 9
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 5,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.3,
+            "max_depth": 7,
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 500,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "ilpd": {
+      "MoeSvm": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 30,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 1000,
+            "gamma": 1,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 1
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.3,
+            "eval_metric": "logloss",
+            "max_depth": 3,
+            "n_estimators": 300,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "max_features": null,
+            "n_estimators": 500,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "ionosphere": {
+      "MoeSvm": {
+         "params": {
+            "lam": 3,
+            "n_learners": 30,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 1,
+            "n_learners": 10,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 20,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 10,
+            "gamma": 0.1,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 1
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 3,
+            "n_estimators": 500,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.3,
+            "max_depth": 7,
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "kr_vs_kp": {
+      "MoeSvm": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 3,
+            "n_learners": 20,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 100,
+            "gamma": 0.01,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 3
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.2,
+            "eval_metric": "logloss",
+            "max_depth": 7,
+            "n_estimators": 500,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.2,
+            "max_depth": 3,
+            "max_features": null,
+            "n_estimators": 500,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "liver-disorders": {
+      "MoeSvm": {
+         "params": {
+            "lam": 5,
+            "n_learners": 20,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 3,
+            "n_learners": 20,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 30,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 100,
+            "gamma": 0.01,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 11
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.2,
+            "eval_metric": "logloss",
+            "max_depth": 7,
+            "n_estimators": 500,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.3,
+            "max_depth": 5,
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "lupus": {
+      "MoeSvm": {
+         "params": {
+            "lam": 5,
+            "n_learners": 20,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 1,
+            "n_learners": 20,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 20,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 500,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 1000,
+            "gamma": 1,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 9
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 5,
+            "n_estimators": 300,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.2,
+            "max_depth": 7,
+            "max_features": null,
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "mammographic": {
+      "MoeSvm": {
+         "params": {
+            "lam": 3,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 3,
+            "n_learners": 20,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 100,
+            "gamma": 0.01,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 7
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 3,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "mushroom": {
+      "MoeSvm": {
+         "params": {
+            "lam": 1,
+            "n_learners": 10,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 1,
+            "n_learners": 10,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 20,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 1,
+            "gamma": 0.1,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 1
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 3,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "max_features": null,
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "r2": {
+      "MoeSvm": {
+         "params": {
+            "lam": 3,
+            "n_learners": 30,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 5,
+            "n_learners": 20,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 10,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 100,
+            "gamma": 0.01,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 7
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 5,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.1,
+            "max_depth": 7,
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 300,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "svmguide1": {
+      "MoeSvm": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 3,
+            "n_learners": 30,
+            "prop_sample": 0.1,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 10,
+            "gamma": 0.1,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 7
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 3,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.1,
+            "max_depth": 5,
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "svmguide3": {
+      "MoeSvm": {
+         "params": {
+            "lam": 5,
+            "n_learners": 20,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 3,
+            "n_learners": 20,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": false
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 1,
+            "n_learners": 20,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 500,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 1000,
+            "gamma": 0.01,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 9
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 7,
+            "n_estimators": 300,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.2,
+            "max_depth": 3,
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": null,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   },
+   "transfusion": {
+      "MoeSvm": {
+         "params": {
+            "lam": 5,
+            "n_learners": 20,
+            "prop_sample": 0.5,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeKnn": {
+         "params": {
+            "lam": 3,
+            "n_learners": 20,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "MoeDt": {
+         "params": {
+            "lam": 5,
+            "n_learners": 30,
+            "prop_sample": 0.3,
+            "random_state": 1234,
+            "wrab": true
+         }
+      },
+      "RandomForest": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 300,
+            "random_state": 1234
+         }
+      },
+      "SVM": {
+         "params": {
+            "C": 10,
+            "gamma": 1,
+            "kernel": "rbf",
+            "random_state": 1234
+         }
+      },
+      "KNN": {
+         "params": {
+            "n_jobs": -1,
+            "n_neighbors": 9
+         }
+      },
+      "XGBoost": {
+         "params": {
+            "eta": 0.1,
+            "eval_metric": "logloss",
+            "max_depth": 5,
+            "n_estimators": 100,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      },
+      "GradientBoosting": {
+         "params": {
+            "learning_rate": 0.2,
+            "max_depth": 3,
+            "max_features": "sqrt",
+            "n_estimators": 100,
+            "random_state": 1234
+         }
+      },
+      "ExtraTrees": {
+         "params": {
+            "max_features": "sqrt",
+            "n_estimators": 500,
+            "n_jobs": -1,
+            "random_state": 1234
+         }
+      }
+   }
+}

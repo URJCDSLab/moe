@@ -5,6 +5,7 @@ from tqdm import tqdm
 import contextlib
 import joblib
 import json
+import time 
 
 from sklearn.model_selection import ParameterGrid
 from sklearn.utils.fixes import _joblib_parallel_args
@@ -133,3 +134,18 @@ class gridsearch():
         self.best_params_ = self.scoring_results_[self.best_index_][1]
         self.best_score_ = np.mean(self.scoring_results_[self.best_index_][2]), np.std(
             self.scoring_results_[self.best_index_][2])
+
+class Timer:
+
+    def __init__(self, msg='', no_msg=False):
+        self.msg = msg
+
+    def __enter__(self):
+        self.start = time.perf_counter()
+        return self
+
+    def __exit__(self, *args):
+        self.end = time.perf_counter()
+        self.interval = self.end - self.start
+        if self.msg == '':
+            print(f'[{self.msg}] Elapsed time: {self.interval.seconds}s')
