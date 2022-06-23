@@ -115,7 +115,7 @@ class gridsearch():
             scores.append(self.scoring(
                 y[test_index], clf.predict(X[test_index])))
 
-        return [clf, params, scores, np.mean(scores)]
+        return [params, scores, np.mean(scores)]
 
     def fit(self, X, y):
 
@@ -127,13 +127,13 @@ class gridsearch():
             self.scoring_results_ = Parallel(n_jobs=self.n_jobs, **_joblib_parallel_args(prefer='threads'))(
                 delayed(self._eval)(X, y, params)for params in grid_params)
 
-        self.best_index_ = np.argmax([result[3]
+        self.best_index_ = np.argmax([result[2]
                                       for result in self.scoring_results_])
 
-        self.best_estimator_ = self.scoring_results_[self.best_index_][0]
-        self.best_params_ = self.scoring_results_[self.best_index_][1]
-        self.best_score_ = np.mean(self.scoring_results_[self.best_index_][2]), np.std(
-            self.scoring_results_[self.best_index_][2])
+        # self.best_estimator_ = self.scoring_results_[self.best_index_][0]
+        self.best_params_ = self.scoring_results_[self.best_index_][0]
+        self.best_score_ = np.mean(self.scoring_results_[self.best_index_][1]), np.std(
+            self.scoring_results_[self.best_index_][1])
 
 class Timer:
 
@@ -149,3 +149,4 @@ class Timer:
         self.interval = self.end - self.start
         if self.msg == '':
             print(f'[{self.msg}] Elapsed time: {self.interval.seconds}s')
+            

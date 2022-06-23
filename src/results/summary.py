@@ -2,7 +2,9 @@ import os
 import pandas as pd
 import pickle
 import itertools
-
+from scipy.stats import wilcoxon
+import warnings
+warnings.filterwarnings("ignore")
 
 model_names = ['MoeSvm.p', 'MoeKnn.p', 'MoeDt.p','RandomForest.p', 'SVM.p', 'KNN.p', 'XGBoost.p', 'GradientBoosting.p', 'ExtraTrees.p']
 methods = ['MOE SVM', 'MOE KNN', 'MOE DT','Random Forest', 'SVM', 'KNN', 'XGBoost', 'Gradient Boosting', 'Extra Trees']
@@ -165,3 +167,14 @@ def best_params(results_path='../results'):
             with open('/'.join(['/'.join([results_path, exp]), model]), 'rb') as fin:
                 best_params[exp][model[:-2]]['params'] = pickle.load(fin).best_params_
     return best_params
+
+def wsrt(df_mean):
+    p_values = pd.DataFrame(index = ['MOE SVM', 'MOE KNN', 'MOE DT'], columns = ['MOE SVM', 'MOE KNN', 'MOE DT', 'Random Forest', 'SVM', 'KNN',
+       'XGBoost', 'Gradient Boosting', 'Extra Trees'])
+    for i in ['MOE SVM', 'MOE KNN', 'MOE DT']:
+        columns = [col for col in p_values.columns if col != i]
+        for j in columns:
+            d = df_mean[i] - df_mean[j]
+            w, p = wilcoxon(d, alternative='greater')
+            p_values.loc[i, j] = p
+    return p_values

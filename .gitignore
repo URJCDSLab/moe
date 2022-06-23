@@ -76,7 +76,7 @@ target/
 .ipynb_checkpoints/
 
 # exclude serialized trained models from source control by default
-/results/
+/results_old/
 
 # Mac OS-specific storage files
 .DS_Store
