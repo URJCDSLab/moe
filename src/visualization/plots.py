@@ -153,6 +153,9 @@ def WinTieLoss(wtl_df, leyend=True,saving_path=None):
     if leyend==True:
         # Add a legend and informative axis label
         ax.legend(ncol=6, loc="center", frameon=False,  bbox_to_anchor=(.5, 1.05))
+    else:
+         saving_path = saving_path+'_no_leyend'
+         
     ax.set(xlim=(0, n_df), ylabel="",
         xlabel="Number of Datasets")
     sns.despine(left=True, bottom=True)
