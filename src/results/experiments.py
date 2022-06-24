@@ -68,173 +68,203 @@ for experiment in [
 
 
     # SVM hyperparameters gridsearch
+    try:
+        with open(f'results/{experiment}/SVM.p', 'rb') as fin:
+            svm = pickle.load(fin)
+    except:
+        grid_params = {'C': [1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1, 1, 10], 'kernel':['rbf'], 'random_state': [1234]}
 
-    grid_params = {'C': [1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1, 1, 10], 'kernel':['rbf'], 'random_state': [1234]}
+        svm = gridsearch(SVC, grid_params, scaled_mcc, cv=10, n_jobs=-1)
 
-    svm = gridsearch(SVC, grid_params, scaled_mcc, cv=10, n_jobs=-1)
+        svm.fit(X, y)
 
+        with open(f'results/{experiment}/SVM.p', 'wb') as fout:
+            pickle.dump(svm, fout, protocol=pickle.HIGHEST_PROTOCOL)
+    
     print('SVM: \n')
-
-    svm.fit(X, y)
-
     print(f'params: {svm.best_params_}, score: {svm.best_score_}\n')
-
-    with open(f'results/{experiment}/SVM.p', 'wb') as fout:
-        pickle.dump(svm, fout, protocol=pickle.HIGHEST_PROTOCOL)
-
+        
+        
     # KNN hyperparameters gridsearch
+    try:
+        with open(f'results/{experiment}/KNN.p', 'rb') as fin:
+            pickle.load(fin)
+    except:
 
-    grid_params = {'n_neighbors' : list(range(1, 13, 2)), 'n_jobs': [-1]}
+        grid_params = {'n_neighbors' : list(range(1, 13, 2)), 'n_jobs': [-1]}
 
-    knn = gridsearch(KNeighborsClassifier, grid_params, scaled_mcc, cv=10, n_jobs=-1)
+        knn = gridsearch(KNeighborsClassifier, grid_params, scaled_mcc, cv=10, n_jobs=-1)
 
+        knn.fit(X, y)   
+
+        with open(f'results/{experiment}/KNN.p', 'wb') as fout:
+            pickle.dump(knn, fout, protocol=pickle.HIGHEST_PROTOCOL)
+    
     print('KNN: \n')
-
-    knn.fit(X, y)   
-
     print(f'params: {knn.best_params_}, score: {knn.best_score_}\n')
+    
+    
+    # XGBoost hyperparameters gridsearch
+    try:
+        with open(f'results/{experiment}/XGBoost.p', 'rb') as fin:
+            xgb = pickle.load(fin)
+    except:
+        grid_params = {'max_depth': [3, 5, 7], 'eta': [0.1, 0.2,
+                                        0.3], 'n_estimators': [100, 300, 500],
+                    'eval_metric': ['logloss'], 'n_jobs': [-1], 'random_state': [1234]}
 
-    with open(f'results/{experiment}/KNN.p', 'wb') as fout:
-        pickle.dump(knn, fout, protocol=pickle.HIGHEST_PROTOCOL)
+        xgb = gridsearch(XGBClassifier, grid_params,
+                        scaled_mcc, cv=10, n_jobs=-1)
+
+        xgb.fit(X, y)
+
+        with open(f'results/{experiment}/XGBoost.p', 'wb') as fout:
+            pickle.dump(xgb, fout, protocol=pickle.HIGHEST_PROTOCOL)
+    
+    print('XGBoost: \n')
+    print(f'params: {xgb.best_params_}, score: {xgb.best_score_}\n')
+
+
+    # Extra Trees hyperparameters gridsearch
+    try:
+        with open(f'results/{experiment}/ExtraTrees.p', 'rb') as fin:
+            et = pickle.load(fin)
+    except:
+        grid_params = {'max_features': [None, 'sqrt',
+                                        'log2'], 'n_estimators': [100, 300, 500], 'n_jobs': [-1], 'random_state': [1234]}
+
+        et = gridsearch(ExtraTreesClassifier, grid_params,
+                        scaled_mcc, cv=10, n_jobs=-1)
+
+        et.fit(X, y)
+
+        with open(f'results/{experiment}/ExtraTrees.p', 'wb') as fout:
+            pickle.dump(et, fout, protocol=pickle.HIGHEST_PROTOCOL)
+        
+    print('Extra Trees: \n')
+    print(f'params: {et.best_params_}, score: {et.best_score_}\n')
+
+
+    # Gradient Boosting hyperparameters gridsearch
+    try:
+        with open(f'results/{experiment}/GradientBoosting.p', 'rb') as fin:
+            gb = pickle.load(fin)
+    except:
+        grid_params = {'max_features': [None, 'sqrt',
+                                        'log2'], 'max_depth': [3, 5, 7], 'learning_rate': [0.1, 0.2,
+                                        0.3], 'n_estimators': [100, 300, 500], 'random_state': [1234]}
+
+        gb = gridsearch(GradientBoostingClassifier, grid_params,
+                        scaled_mcc, cv=10, n_jobs=-1)
+
+        gb.fit(X, y)
+
+        with open(f'results/{experiment}/GradientBoosting.p', 'wb') as fout:
+            pickle.dump(gb, fout, protocol=pickle.HIGHEST_PROTOCOL)
+    
+    print('Gradient Boosting: \n')
+    print(f'params: {gb.best_params_}, score: {gb.best_score_}\n')
+
+
+    # Random Forest hyperparameters gridsearch
+    try:
+        with open(f'results/{experiment}/RandomForest.p', 'rb') as fin:
+            rf =pickle.load(fin)
+    except:
+        grid_params = {'max_features': [None, 'sqrt',
+                                        'log2'], 'n_estimators': [100, 300, 500], 'random_state': [1234]}
+
+        rf = gridsearch(RandomForestClassifier, grid_params,
+                        scaled_mcc, cv=10, n_jobs=-1)
+
+        rf.fit(X, y)
+
+        with open(f'results/{experiment}/RandomForest.p', 'wb') as fout:
+            pickle.dump(rf, fout, protocol=pickle.HIGHEST_PROTOCOL)
+    
+    print('Random Forest: \n')
+    print(f'params: {rf.best_params_}, score: {rf.best_score_}\n')
 
 
     # MOE-kNN hyperparameters gridsearch
-    grid_params = {
-        'wrab': [True, False],
-        'lam': [1, 3, 5],
-        'prop_sample': [0.10, 0.30, 0.50],
-        'n_learners': [10, 20, 30],
-        'random_state': [1234]
-    }
+    try:
+        with open(f'results/{experiment}/MoeKnn.p', 'rb') as fin:
+            moe_knn_grid = pickle.load(fin)
+    except:
+        grid_params = {
+            'wrab': [True, False],
+            'lam': [1, 3, 5],
+            'prop_sample': [0.10, 0.30, 0.50],
+            'n_learners': [10, 20, 30],
+            'random_state': [1234]
+        }
 
-    kwargs = {'method':KNeighborsClassifier, 'params':{'n_neighbors' : list(range(1, 13, 2))}}
+        kwargs = {'method':KNeighborsClassifier, 'params':{'n_neighbors' : list(range(1, 13, 2))}}
 
-    moe_knn = MOE
+        moe_knn = MOE
 
-    moe_knn_grid = gridsearch(moe_knn, grid_params, scoring=scaled_mcc, cv=10, n_jobs=-1, kwargs=kwargs)
+        moe_knn_grid = gridsearch(moe_knn, grid_params, scoring=scaled_mcc, cv=10, n_jobs=-1, kwargs=kwargs)
 
-    print('MOE kNN: \n')
+        moe_knn_grid.fit(X, y)
 
-    moe_knn_grid.fit(X, y)
+        with open(f'results/{experiment}/MoeKnn.p', 'wb') as fout:
+            pickle.dump(moe_knn_grid, fout, protocol=pickle.HIGHEST_PROTOCOL)
 
+    print('MOE kNN: \n')        
     print(f'params: {moe_knn_grid.best_params_}, score: {moe_knn_grid.best_score_}\n')
-
-    with open(f'results/{experiment}/MoeKnn.p', 'wb') as fout:
-        pickle.dump(moe_knn_grid, fout, protocol=pickle.HIGHEST_PROTOCOL)
-        
 
 
     # MOE-DT hyperparameters gridsearch
-    grid_params = {
-        'wrab': [True, False],
-        'lam': [1, 3, 5],
-        'prop_sample': [0.10, 0.30, 0.50],
-        'n_learners': [10, 20, 30],
-        'random_state': [1234]
-    }
+    try:
+        with open(f'results/{experiment}/MoeDt.p', 'rb') as fin:
+            moe_dt_grid = pickle.load(fin)
+    except:
+        grid_params = {
+            'wrab': [True, False],
+            'lam': [1, 3, 5],
+            'prop_sample': [0.10, 0.30, 0.50],
+            'n_learners': [10, 20, 30],
+            'random_state': [1234]
+        }
 
-    kwargs = {'method':DecisionTreeClassifier, 'params':{'criterion' : {"gini", "entropy"}, 'max_depth' : list(range(1, 10, 1))}}
+        kwargs = {'method':DecisionTreeClassifier, 'params':{'criterion' : {"gini", "entropy"}, 'max_depth' : list(range(1, 10, 1))}}
 
-    moe_dt = MOE
+        moe_dt = MOE
 
-    moe_dt_grid = gridsearch(moe_dt, grid_params, scoring=scaled_mcc, cv=10, n_jobs=-1, kwargs=kwargs)
+        moe_dt_grid = gridsearch(moe_dt, grid_params, scoring=scaled_mcc, cv=10, n_jobs=-1, kwargs=kwargs)
 
+        moe_dt_grid.fit(X, y)
+
+        with open(f'results/{experiment}/MoeDt.p', 'wb') as fout:
+            pickle.dump(moe_dt_grid, fout, protocol=pickle.HIGHEST_PROTOCOL)
+    
     print('MOE DT: \n')
-
-    moe_dt_grid.fit(X, y)
-
     print(f'params: {moe_dt_grid.best_params_}, score: {moe_dt_grid.best_score_}\n')
 
-    with open(f'results/{experiment}/MoeDt.p', 'wb') as fout:
-        pickle.dump(moe_dt_grid, fout, protocol=pickle.HIGHEST_PROTOCOL)
 
     # MOE-SVM hyperparameters gridsearch
-    grid_params = {
-        'wrab': [True, False],
-        'lam': [1, 3, 5],
-        'prop_sample': [0.10, 0.30, 0.50],
-        'n_learners': [10, 20, 30],
-        'random_state': [1234]
-    }
+    try:
+        with open(f'results/{experiment}/MoeSvm.p', 'rb') as fin:
+            moe_svm_grid = pickle.load(fin)
+    except:
+        grid_params = {
+            'wrab': [True, False],
+            'lam': [1, 3, 5],
+            'prop_sample': [0.10, 0.30, 0.50],
+            'n_learners': [10, 20, 30],
+            'random_state': [1234]
+        }
 
-    kwargs = {'method':SVC, 'params':{'C': [1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1, 1, 10]}}
+        kwargs = {'method':SVC, 'params':{'C': [1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1, 1, 10]}}
 
-    moe_svm = MOE
+        moe_svm = MOE
 
-    moe_svm_grid = gridsearch(moe_svm, grid_params, scoring=scaled_mcc, cv=10, n_jobs=-1, kwargs=kwargs)
+        moe_svm_grid = gridsearch(moe_svm, grid_params, scoring=scaled_mcc, cv=10, n_jobs=-1, kwargs=kwargs)
 
-    print('MOE SVM: \n')
+        moe_svm_grid.fit(X, y)
 
-    moe_svm_grid.fit(X, y)
-
-    print(f'params: {moe_svm_grid.best_params_}, score: {moe_svm_grid.best_score_}\n')
-
-    with open(f'results/{experiment}/MoeSvm.p', 'wb') as fout:
-        pickle.dump(moe_svm_grid, fout, protocol=pickle.HIGHEST_PROTOCOL)
-        
-    # XGBoost hyperparameters gridsearch
-    grid_params = {'max_depth': [3, 5, 7], 'eta': [0.1, 0.2,
-                                    0.3], 'n_estimators': [100, 300, 500],
-                'eval_metric': ['logloss'], 'n_jobs': [-1], 'random_state': [1234]}
-
-    xgb = gridsearch(XGBClassifier, grid_params,
-                    scaled_mcc, cv=10, n_jobs=-1)
-
-    print('XGBoost: \n')
-
-    xgb.fit(X, y)
-
-    print(f'params: {xgb.best_params_}, score: {xgb.best_score_}\n')
-
-    with open(f'results/{experiment}/XGBoost.p', 'wb') as fout:
-        pickle.dump(xgb, fout, protocol=pickle.HIGHEST_PROTOCOL)
-
-    # Extra Trees hyperparameters gridsearch
-    grid_params = {'max_features': [None, 'sqrt',
-                                    'log2'], 'n_estimators': [100, 300, 500], 'n_jobs': [-1], 'random_state': [1234]}
-
-    et = gridsearch(ExtraTreesClassifier, grid_params,
-                    scaled_mcc, cv=10, n_jobs=-1)
-
-    print('Extra Trees: \n')
-
-    et.fit(X, y)
-
-    print(f'params: {et.best_params_}, score: {et.best_score_}\n')
-
-    with open(f'results/{experiment}/ExtraTrees.p', 'wb') as fout:
-        pickle.dump(et, fout, protocol=pickle.HIGHEST_PROTOCOL)
-
-    # Gradient Boosting hyperparameters gridsearch
-    grid_params = {'max_features': [None, 'sqrt',
-                                    'log2'], 'max_depth': [3, 5, 7], 'learning_rate': [0.1, 0.2,
-                                    0.3], 'n_estimators': [100, 300, 500], 'random_state': [1234]}
-
-    gb = gridsearch(GradientBoostingClassifier, grid_params,
-                    scaled_mcc, cv=10, n_jobs=-1)
-
-    print('Gradient Boosting: \n')
-
-    gb.fit(X, y)
-
-    print(f'params: {gb.best_params_}, score: {gb.best_score_}\n')
-
-    with open(f'results/{experiment}/GradientBoosting.p', 'wb') as fout:
-        pickle.dump(gb, fout, protocol=pickle.HIGHEST_PROTOCOL)
-
-    # Random Forest hyperparameters gridsearch
-    grid_params = {'max_features': [None, 'sqrt',
-                                    'log2'], 'n_estimators': [100, 300, 500], 'random_state': [1234]}
-
-    rf = gridsearch(RandomForestClassifier, grid_params,
-                    scaled_mcc, cv=10, n_jobs=-1)
-
-    print('Random Forest: \n')
-
-    rf.fit(X, y)
-
-    print(f'params: {rf.best_params_}, score: {rf.best_score_}\n')
-
-    with open(f'results/{experiment}/RandomForest.p', 'wb') as fout:
-        pickle.dump(rf, fout, protocol=pickle.HIGHEST_PROTOCOL)
+        with open(f'results/{experiment}/MoeSvm.p', 'wb') as fout:
+            pickle.dump(moe_svm_grid, fout, protocol=pickle.HIGHEST_PROTOCOL)
     
+    print('MOE SVM: \n')    
+    print(f'params: {moe_svm_grid.best_params_}, score: {moe_svm_grid.best_score_}\n')
