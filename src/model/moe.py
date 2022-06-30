@@ -70,9 +70,18 @@ class MOE():
 
         if self.wrab:
             random_instance = check_random_state(self.random_state + idx_learner)
-            prop_class_ini = round(random_instance.uniform(0.05, 0.95), 2)
-            num_samples_class_ini = max(int(prop_class_ini* self.num_samples_boostrap), 1)
-            num_samples = [num_samples_class_ini, self.num_samples_boostrap-(num_samples_class_ini)]
+            num_classes = len(np.unique(target))
+            
+            if num_classes < 3:
+                prop_class_ini = round(random_instance.uniform(0.05, 0.95), 2)
+                num_samples_class_ini = max(int(prop_class_ini* self.num_samples_boostrap), 1)
+                num_samples = [num_samples_class_ini, self.num_samples_boostrap-(num_samples_class_ini)]
+            else:
+                
+                prop_samples_ini = random_instance.random(num_classes)
+                prop_samples = prop_samples_ini/prop_samples_ini.sum()
+                num_samples = (prop_samples*self.num_samples_boostrap).round().astype(int)
+                
             classes_index = [np.where(target == category)[0] for category in np.unique(target)]
             
             train_index =[]
